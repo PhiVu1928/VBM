@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="VBM._pages._change_address.mapview"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:map="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps">
+
+    <Grid>
+
+        <map:Map
+            x:Name="MyMap"
+            HorizontalOptions="FillAndExpand"
+            MapType="Street"
+            VerticalOptions="FillAndExpand" />
+
+        <ff:CachedImage
+            Aspect="Fill"
+            HeightRequest="30"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            WidthRequest="30" />
+
+    </Grid>
+
+</ContentView>

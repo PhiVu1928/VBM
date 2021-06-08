@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="VBM._pages._change_address.change_add_page"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:btn="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:ctrls="clr-namespace:VBM._ctrls"
+    xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:local="clr-namespace:VBM._pages._change_address"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    ios:Page.UseSafeArea="True"
+    BackgroundColor="{StaticResource vbmpagebackground}"
+    NavigationPage.HasNavigationBar="False">
+
+    <Grid RowSpacing="10">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="80" />
+        </Grid.RowDefinitions>
+
+        <Grid Margin="10">
+
+            <ff:CachedImage
+                HeightRequest="25"
+                HorizontalOptions="Start"
+                Source="left"
+                VerticalOptions="Center"
+                WidthRequest="25">
+                <ff:CachedImage.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ffimg_turnback_tapped" />
+                </ff:CachedImage.GestureRecognizers>
+            </ff:CachedImage>
+
+            <Label
+                FontFamily="{StaticResource lbo}"
+                FontSize="16"
+                HorizontalOptions="Center"
+                Text="Checkout"
+                TextColor="{StaticResource vbmblack}"
+                VerticalOptions="Center" />
+
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="10">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label
+                FontFamily="{StaticResource lbo}"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="Delivery"
+                TextColor="{StaticResource vbmblack}" />
+
+            <Label
+                Grid.Column="1"
+                FontFamily="{StaticResource lbo}"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Text="Carry out"
+                TextColor="{StaticResource vbmlightgray}" />
+
+        </Grid>
+
+        <StackLayout
+            Grid.Row="2"
+            Margin="20,0"
+            Spacing="10">
+
+            <border:SfBorder
+                Padding="20,0"
+                BackgroundColor="{StaticResource vbmwhite}"
+                BorderWidth="0"
+                CornerRadius="20"
+                HasShadow="False"
+                HeightRequest="40"
+                VerticalOptions="Start">
+                <ctrls:_entry
+                    ClearButtonVisibility="WhileEditing"
+                    FontFamily="{StaticResource lr}"
+                    FontSize="15"
+                    Placeholder="Your address"
+                    PlaceholderColor="{StaticResource vbmlightgray}"
+                    TextColor="{StaticResource vbmblack}" />
+            </border:SfBorder>
+
+        </StackLayout>
+
+        <xct:LazyView
+            x:Name="lazy_map"
+            Grid.Row="2"
+            Margin="0,60,0,10"
+            x:TypeArguments="local:mapview" />
+
+        <btn:SfButton
+            Grid.Row="3"
+            Margin="40,0"
+            BackgroundColor="{StaticResource vbmyellow}"
+            CornerRadius="20"
+            FontFamily="{StaticResource lr}"
+            FontSize="18"
+            HeightRequest="50"
+            Text="OK"
+            TextColor="{StaticResource vbmgreen}"
+            VerticalOptions="Start" />
+
+    </Grid>
+
+</ContentPage>

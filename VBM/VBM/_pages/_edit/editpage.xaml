@@ -1,0 +1,641 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="VBM._pages._edit.editpage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:btn="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms"
+    xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:lv="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+    ios:Page.UseSafeArea="True"
+    BackgroundColor="White"
+    NavigationPage.HasNavigationBar="False">
+
+    <Grid Padding="0">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="60" />
+        </Grid.RowDefinitions>
+
+        <ScrollView Orientation="Vertical">
+
+            <StackLayout Spacing="20">
+
+                <Grid HeightRequest="300">
+
+                    <CarouselView
+                        HorizontalScrollBarVisibility="Always"
+                        ItemsSource="{Binding banners}"
+                        PeekAreaInsets="0">
+
+                        <CarouselView.ItemsLayout>
+                            <LinearItemsLayout
+                                Orientation="Horizontal"
+                                SnapPointsAlignment="Center"
+                                SnapPointsType="MandatorySingle" />
+                        </CarouselView.ItemsLayout>
+
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <ff:CachedImage Aspect="AspectFill" Source="http://manage.vuabanhmi.com/SpImg/14102020195918.jpg" />
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+
+                        <CarouselView.IndicatorView />
+
+                    </CarouselView>
+
+                    <StackLayout
+                        Margin="10"
+                        HorizontalOptions="End"
+                        VerticalOptions="Start">
+
+                        <ff:CachedImage
+                            Aspect="Fill"
+                            HeightRequest="35"
+                            Source="icon_addfavorite"
+                            WidthRequest="35" />
+
+                    </StackLayout>
+
+                </Grid>
+
+                <StackLayout BackgroundColor="White" Spacing="10">
+
+                    <Label
+                        Margin="10,0"
+                        FontFamily="{StaticResource lbi}"
+                        FontSize="20"
+                        HorizontalOptions="Center"
+                        Text="Bánh mì thịt chả" />
+
+                    <StackLayout
+                        Margin="10,0"
+                        HorizontalOptions="Center"
+                        Orientation="Horizontal"
+                        Spacing="10">
+
+                        <border:SfBorder
+                            Padding="10,5"
+                            BackgroundColor="{StaticResource vbmdeeplightgray}"
+                            BorderColor="{StaticResource vbmbrick}"
+                            CornerRadius="20"
+                            HasShadow="False"
+                            HeightRequest="30"
+                            WidthRequest="100">
+
+                            <Label
+                                HorizontalOptions="Center"
+                                Text="M - 29,000"
+                                TextColor="{StaticResource vbmbrick}"
+                                VerticalOptions="Center" />
+
+                        </border:SfBorder>
+
+                        <border:SfBorder
+                            Padding="10,5"
+                            BackgroundColor="{StaticResource vbmdeeplightgray}"
+                            BorderWidth="0"
+                            CornerRadius="20"
+                            HasShadow="False"
+                            HeightRequest="30"
+                            WidthRequest="100">
+
+                            <Label
+                                HorizontalOptions="Center"
+                                Text="L - 35,000"
+                                TextColor="{StaticResource vbmgray}"
+                                VerticalOptions="Center" />
+
+                        </border:SfBorder>
+
+                    </StackLayout>
+
+                    <StackLayout Spacing="5">
+
+                        <StackLayout
+                            HorizontalOptions="Center"
+                            Orientation="Horizontal"
+                            Spacing="5">
+
+                            <border:SfBorder
+                                BackgroundColor="{StaticResource vbmdeeplightgray}"
+                                CornerRadius="10"
+                                HeightRequest="30"
+                                WidthRequest="120">
+                                <Label
+                                    FontSize="11"
+                                    HorizontalOptions="Center"
+                                    HorizontalTextAlignment="Center"
+                                    Text="Ớt bình thường"
+                                    TextColor="{StaticResource vbmgray}"
+                                    VerticalOptions="Center" />
+                            </border:SfBorder>
+
+                            <border:SfBorder
+                                BackgroundColor="{StaticResource vbmdeeplightgray}"
+                                CornerRadius="10"
+                                HeightRequest="30"
+                                WidthRequest="120">
+                                <Label
+                                    FontSize="11"
+                                    HorizontalOptions="Center"
+                                    HorizontalTextAlignment="Center"
+                                    Text="Ớt bình thường"
+                                    TextColor="{StaticResource vbmgray}"
+                                    VerticalOptions="Center" />
+                            </border:SfBorder>
+
+                            <border:SfBorder
+                                BackgroundColor="{StaticResource vbmdeeplightgray}"
+                                CornerRadius="10"
+                                HeightRequest="30"
+                                WidthRequest="120">
+                                <Label
+                                    FontSize="11"
+                                    HorizontalOptions="Center"
+                                    HorizontalTextAlignment="Center"
+                                    Text="Ớt bình thường"
+                                    TextColor="{StaticResource vbmgray}"
+                                    VerticalOptions="Center" />
+                            </border:SfBorder>
+
+                        </StackLayout>
+
+                        <StackLayout
+                            HorizontalOptions="Center"
+                            Orientation="Horizontal"
+                            Spacing="5">
+
+                            <border:SfBorder
+                                BackgroundColor="{StaticResource vbmdeeplightgray}"
+                                CornerRadius="10"
+                                HeightRequest="30"
+                                WidthRequest="120">
+                                <Label
+                                    FontSize="11"
+                                    HorizontalOptions="Center"
+                                    HorizontalTextAlignment="Center"
+                                    Text="Ớt bình thường"
+                                    TextColor="{StaticResource vbmgray}"
+                                    VerticalOptions="Center" />
+                            </border:SfBorder>
+
+                            <border:SfBorder
+                                BackgroundColor="{StaticResource vbmdeeplightgray}"
+                                CornerRadius="10"
+                                HeightRequest="30"
+                                WidthRequest="120">
+                                <Label
+                                    FontSize="11"
+                                    HorizontalOptions="Center"
+                                    HorizontalTextAlignment="Center"
+                                    Text="Ớt bình thường"
+                                    TextColor="{StaticResource vbmgray}"
+                                    VerticalOptions="Center" />
+                            </border:SfBorder>
+
+                            <border:SfBorder
+                                BackgroundColor="{StaticResource vbmdeeplightgray}"
+                                CornerRadius="10"
+                                HeightRequest="30"
+                                WidthRequest="120">
+                                <Label
+                                    FontSize="11"
+                                    HorizontalOptions="Center"
+                                    HorizontalTextAlignment="Center"
+                                    Text="Ớt bình thường"
+                                    TextColor="{StaticResource vbmgray}"
+                                    VerticalOptions="Center" />
+                            </border:SfBorder>
+
+                        </StackLayout>
+
+                        <StackLayout
+                            HorizontalOptions="Center"
+                            Orientation="Horizontal"
+                            Spacing="5">
+
+                            <border:SfBorder
+                                BackgroundColor="{StaticResource vbmdeeplightgray}"
+                                CornerRadius="10"
+                                HeightRequest="30"
+                                WidthRequest="120">
+                                <Label
+                                    FontSize="11"
+                                    HorizontalOptions="Center"
+                                    HorizontalTextAlignment="Center"
+                                    Text="Ớt bình thường"
+                                    TextColor="{StaticResource vbmgray}"
+                                    VerticalOptions="Center" />
+                            </border:SfBorder>
+
+                            <border:SfBorder
+                                BackgroundColor="{StaticResource vbmdeeplightgray}"
+                                CornerRadius="10"
+                                HeightRequest="30"
+                                WidthRequest="120">
+                                <Label
+                                    FontSize="11"
+                                    HorizontalOptions="Center"
+                                    HorizontalTextAlignment="Center"
+                                    Text="Ớt bình thường"
+                                    TextColor="{StaticResource vbmgray}"
+                                    VerticalOptions="Center" />
+                            </border:SfBorder>
+
+                            <border:SfBorder
+                                BackgroundColor="{StaticResource vbmdeeplightgray}"
+                                CornerRadius="10"
+                                HeightRequest="30"
+                                WidthRequest="120">
+                                <Label
+                                    FontSize="11"
+                                    HorizontalOptions="Center"
+                                    HorizontalTextAlignment="Center"
+                                    Text="Ớt bình thường"
+                                    TextColor="{StaticResource vbmgray}"
+                                    VerticalOptions="Center" />
+                            </border:SfBorder>
+
+                        </StackLayout>
+
+                    </StackLayout>
+
+                    <Grid HeightRequest="60">
+
+                        <Label
+                            Margin="10,0"
+                            HorizontalOptions="Start"
+                            Text="Combo thêm nước tiết kiệm hơn"
+                            TextDecorations="Underline"
+                            VerticalOptions="Center" />
+
+                        <border:SfBorder
+                            Margin="10,0"
+                            BackgroundColor="{StaticResource vbmgreen}"
+                            CornerRadius="20"
+                            HasShadow="False"
+                            HeightRequest="50"
+                            HorizontalOptions="End"
+                            VerticalOptions="Center"
+                            WidthRequest="100">
+
+                            <Label
+                                Margin="10,0"
+                                FontFamily="{StaticResource lbo}"
+                                HorizontalOptions="Center"
+                                Text="Chọn nước"
+                                TextColor="White"
+                                VerticalOptions="Center" />
+
+                        </border:SfBorder>
+
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="toSelectDrinkCb_tapped" />
+                        </Grid.GestureRecognizers>
+
+                    </Grid>
+
+                    <Label
+                        Margin="10,0"
+                        FontSize="17"
+                        Text="Thêm Topping:"
+                        TextDecorations="Underline" />
+
+                    <StackLayout Margin="10,0" Spacing="5">
+
+                        <Grid HeightRequest="30">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="60" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="Thêm chả" VerticalOptions="Center" />
+
+                            <border:SfBorder
+                                Grid.Column="1"
+                                Padding="10,0"
+                                BackgroundColor="{StaticResource vbmdeeplightgray}"
+                                BorderWidth="0"
+                                CornerRadius="10"
+                                HasShadow="False"
+                                HeightRequest="30"
+                                HorizontalOptions="Start"
+                                WidthRequest="100">
+
+                                <Grid VerticalOptions="Center">
+
+                                    <Grid
+                                        HorizontalOptions="Start"
+                                        VerticalOptions="Center"
+                                        WidthRequest="30">
+                                        <Label
+                                            FontSize="18"
+                                            HorizontalOptions="Start"
+                                            Text="-" />
+                                    </Grid>
+
+                                    <Label
+                                        FontSize="16"
+                                        HorizontalOptions="Center"
+                                        Text="1"
+                                        VerticalOptions="Center" />
+
+                                    <Grid
+                                        HorizontalOptions="End"
+                                        VerticalOptions="Center"
+                                        WidthRequest="30">
+                                        <Label
+                                            FontSize="18"
+                                            HorizontalOptions="End"
+                                            Text="+" />
+                                    </Grid>
+
+                                </Grid>
+
+                            </border:SfBorder>
+
+                            <Label
+                                Grid.Column="2"
+                                FontSize="16"
+                                HorizontalOptions="End"
+                                Text="5,000 d"
+                                VerticalOptions="Center" />
+
+                        </Grid>
+
+                        <Grid HeightRequest="30">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="60" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="Thêm chả" VerticalOptions="Center" />
+
+                            <border:SfBorder
+                                Grid.Column="1"
+                                Padding="10,0"
+                                BackgroundColor="{StaticResource vbmdeeplightgray}"
+                                BorderWidth="0"
+                                CornerRadius="10"
+                                HasShadow="False"
+                                HeightRequest="30"
+                                HorizontalOptions="Start"
+                                WidthRequest="100">
+
+                                <Grid VerticalOptions="Center">
+
+                                    <Grid
+                                        HorizontalOptions="Start"
+                                        VerticalOptions="Center"
+                                        WidthRequest="30">
+                                        <Label
+                                            FontSize="18"
+                                            HorizontalOptions="Start"
+                                            Text="-" />
+                                    </Grid>
+
+                                    <Label
+                                        FontSize="16"
+                                        HorizontalOptions="Center"
+                                        Text="1"
+                                        VerticalOptions="Center" />
+
+                                    <Grid
+                                        HorizontalOptions="End"
+                                        VerticalOptions="Center"
+                                        WidthRequest="30">
+                                        <Label
+                                            FontSize="18"
+                                            HorizontalOptions="End"
+                                            Text="+" />
+                                    </Grid>
+
+                                </Grid>
+
+                            </border:SfBorder>
+
+                            <Label
+                                Grid.Column="2"
+                                FontSize="16"
+                                HorizontalOptions="End"
+                                Text="5,000 d"
+                                VerticalOptions="Center" />
+
+                        </Grid>
+
+                        <Grid HeightRequest="30">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="60" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="Thêm chả" VerticalOptions="Center" />
+
+                            <border:SfBorder
+                                Grid.Column="1"
+                                Padding="10,0"
+                                BackgroundColor="{StaticResource vbmdeeplightgray}"
+                                BorderWidth="0"
+                                CornerRadius="10"
+                                HasShadow="False"
+                                HeightRequest="30"
+                                HorizontalOptions="Start"
+                                WidthRequest="100">
+
+                                <Grid VerticalOptions="Center">
+
+                                    <Grid
+                                        HorizontalOptions="Start"
+                                        VerticalOptions="Center"
+                                        WidthRequest="30">
+                                        <Label
+                                            FontSize="18"
+                                            HorizontalOptions="Start"
+                                            Text="-" />
+                                    </Grid>
+
+                                    <Label
+                                        FontSize="16"
+                                        HorizontalOptions="Center"
+                                        Text="1"
+                                        VerticalOptions="Center" />
+
+                                    <Grid
+                                        HorizontalOptions="End"
+                                        VerticalOptions="Center"
+                                        WidthRequest="30">
+                                        <Label
+                                            FontSize="18"
+                                            HorizontalOptions="End"
+                                            Text="+" />
+                                    </Grid>
+
+                                </Grid>
+
+                            </border:SfBorder>
+
+                            <Label
+                                Grid.Column="2"
+                                FontSize="16"
+                                HorizontalOptions="End"
+                                Text="5,000 d"
+                                VerticalOptions="Center" />
+
+                        </Grid>
+
+                    </StackLayout>
+
+                </StackLayout>
+
+                <Grid HeightRequest="100" />
+
+            </StackLayout>
+
+        </ScrollView>
+
+        <Grid Grid.Row="1">
+
+            <btn:SfButton
+                Margin="20,0,20,0"
+                Padding="20,0"
+                BackgroundColor="{StaticResource vbmyellow}"
+                Clicked="toCart_clicked"
+                CornerRadius="20"
+                FontSize="20"
+                HeightRequest="60"
+                VerticalOptions="End">
+
+                <Grid>
+
+                    <StackLayout
+                        HorizontalOptions="Start"
+                        Orientation="Horizontal"
+                        Spacing="10"
+                        VerticalOptions="Center">
+
+                        <Grid
+                            HeightRequest="30"
+                            VerticalOptions="Center"
+                            WidthRequest="30">
+
+                            <Label
+                                FontFamily="{StaticResource lbo}"
+                                FontSize="20"
+                                HorizontalOptions="Start"
+                                Text="-"
+                                TextColor="{StaticResource vbmgreen}"
+                                VerticalOptions="Center" />
+
+                        </Grid>
+
+                        <Label
+                            FontFamily="{StaticResource lbo}"
+                            FontSize="16"
+                            Text="1"
+                            TextColor="{StaticResource vbmgreen}"
+                            VerticalOptions="Center" />
+
+                        <Grid
+                            HeightRequest="30"
+                            VerticalOptions="Center"
+                            WidthRequest="30">
+
+                            <Label
+                                FontFamily="{StaticResource lbo}"
+                                FontSize="20"
+                                HorizontalOptions="End"
+                                Text="+"
+                                TextColor="{StaticResource vbmgreen}"
+                                VerticalOptions="Center" />
+
+                        </Grid>
+
+                    </StackLayout>
+
+
+                    <StackLayout
+                        HorizontalOptions="End"
+                        Spacing="0"
+                        VerticalOptions="Center">
+
+                        <Label
+                            FontFamily="{StaticResource lbo}"
+                            FontSize="15"
+                            HorizontalOptions="End"
+                            Text="35,000 d"
+                            TextColor="{StaticResource vbmbrick}"
+                            VerticalOptions="Center" />
+
+                        <Label
+                            FontSize="15"
+                            HorizontalOptions="End"
+                            Text="Thêm vào giỏ hàng"
+                            TextColor="{StaticResource vbmgreen}"
+                            VerticalOptions="Center" />
+
+                    </StackLayout>
+
+                </Grid>
+
+            </btn:SfButton>
+
+        </Grid>
+
+        <btn:SfButton
+            Grid.RowSpan="2"
+            Margin="10"
+            BackgroundColor="White"
+            Clicked="btn_close_clicked"
+            CornerRadius="20"
+            FontFamily="{StaticResource lr}"
+            FontSize="20"
+            HeightRequest="40"
+            HorizontalOptions="Start"
+            Text="x"
+            TextColor="{StaticResource vbmgreen}"
+            VerticalOptions="Start"
+            WidthRequest="40" />
+
+        <border:SfBorder
+            Margin="10"
+            Padding="2"
+            BackgroundColor="White"
+            CornerRadius="20"
+            HasShadow="False"
+            HeightRequest="40"
+            HorizontalOptions="End"
+            VerticalOptions="Start"
+            WidthRequest="40">
+            <Grid
+                HeightRequest="20"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                WidthRequest="20">
+                <ff:CachedImage
+                    Grid.RowSpan="2"
+                    Aspect="Fill"
+                    HeightRequest="20"
+                    HorizontalOptions="Center"
+                    Source="infodinhduong"
+                    VerticalOptions="Center"
+                    WidthRequest="20" />
+            </Grid>
+            <border:SfBorder.GestureRecognizers>
+                <TapGestureRecognizer Tapped="toNutritionInfo_tapped" />
+            </border:SfBorder.GestureRecognizers>
+        </border:SfBorder>
+
+    </Grid>
+
+</ContentPage>

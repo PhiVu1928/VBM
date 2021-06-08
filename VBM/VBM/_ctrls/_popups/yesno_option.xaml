@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xct:Popup
+    x:Class="VBM._ctrls._popups.yesno_option"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:btn="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    BackgroundColor="Transparent"
+    HorizontalOptions="Center"
+    Size="300,300"
+    VerticalOptions="Center"
+    Color="White">
+
+    <border:SfBorder
+        Margin="0"
+        Padding="20"
+        BackgroundColor="White"
+        BorderWidth="0"
+        CornerRadius="20"
+        HasShadow="False">
+
+        <Grid>
+
+            <StackLayout
+                HorizontalOptions="Center"
+                Orientation="Horizontal"
+                Spacing="10"
+                VerticalOptions="End">
+
+                <btn:SfButton
+                    x:Name="btnNo"
+                    BackgroundColor="Orange"
+                    Clicked="btnNo_Clicked"
+                    HeightRequest="50"
+                    Text="No"
+                    TextColor="Black"
+                    WidthRequest="100" />
+
+                <btn:SfButton
+                    x:Name="btnYes"
+                    BackgroundColor="Blue"
+                    Clicked="btnYes_Clicked"
+                    HeightRequest="50"
+                    Text="Yes"
+                    TextColor="Black"
+                    WidthRequest="100" />
+
+            </StackLayout>
+
+        </Grid>
+
+    </border:SfBorder>
+
+</xct:Popup>

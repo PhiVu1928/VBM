@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="VBM._pages._cart.item_product"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+
+    <border:SfBorder
+        Padding="20"
+        BackgroundColor="White"
+        BorderWidth="0"
+        CornerRadius="20"
+        HasShadow="False">
+
+        <Grid ColumnSpacing="5">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+
+            <ff:CachedImage
+                Aspect="Fill"
+                BackgroundColor="LightBlue"
+                HeightRequest="55"
+                HorizontalOptions="Center"
+                WidthRequest="80" />
+
+            <StackLayout
+                Grid.Row="1"
+                HorizontalOptions="Center"
+                Spacing="3"
+                VerticalOptions="Center">
+
+                <border:SfBorder
+                    Padding="5,2"
+                    BackgroundColor="{StaticResource vbmdeeplightgray}"
+                    CornerRadius="5"
+                    HasShadow="False"
+                    WidthRequest="80">
+                    <Label
+                        FontSize="8"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="Them cha x 1"
+                        TextColor="{StaticResource vbmgray}" />
+                </border:SfBorder>
+
+                <border:SfBorder
+                    Padding="5,2"
+                    BackgroundColor="{StaticResource vbmdeeplightgray}"
+                    CornerRadius="5"
+                    HasShadow="False"
+                    WidthRequest="80">
+                    <Label
+                        FontSize="8"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="Them cha x 1"
+                        TextColor="{StaticResource vbmgray}" />
+                </border:SfBorder>
+
+                <border:SfBorder
+                    Padding="5,2"
+                    BackgroundColor="{StaticResource vbmdeeplightgray}"
+                    CornerRadius="5"
+                    HasShadow="False"
+                    WidthRequest="80">
+                    <Label
+                        FontSize="8"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="Them cha x 1"
+                        TextColor="{StaticResource vbmgray}" />
+                </border:SfBorder>
+
+            </StackLayout>
+
+            <Label
+                Grid.Column="1"
+                Text="Banh mi dau hu nuong an nhe"
+                TextColor="{StaticResource vbmblack}"
+                VerticalOptions="Center" />
+
+            <Grid Grid.Row="1" Grid.Column="1">
+
+                <Label
+                    Margin="0,0,100,0"
+                    FontSize="11"
+                    Text="Khong ot, nhieu dua leo, it rau ram"
+                    TextColor="{StaticResource vbmbrick}"
+                    VerticalOptions="Center" />
+
+                <StackLayout
+                    HorizontalOptions="End"
+                    Spacing="2"
+                    VerticalOptions="Center"
+                    WidthRequest="90">
+
+                    <Label
+                        FontSize="10"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="25,000 d"
+                        TextColor="{StaticResource vbmlightgray}"
+                        TextDecorations="Strikethrough" />
+
+                    <Label
+                        FontSize="13"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="20,000 d"
+                        TextColor="{StaticResource vbmpinttext}" />
+
+                    <border:SfBorder
+                        Padding="10,3"
+                        BackgroundColor="{StaticResource vbmpinttext}"
+                        CornerRadius="20"
+                        HasShadow="False"
+                        HorizontalOptions="Center">
+
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+
+                            <border:SfBorder
+                                Padding="0"
+                                BackgroundColor="Transparent"
+                                BorderWidth="0"
+                                HasShadow="False"
+                                HeightRequest="20"
+                                WidthRequest="20">
+                                <Label
+                                    FontFamily="{StaticResource lbo}"
+                                    HorizontalOptions="Center"
+                                    Text="-"
+                                    TextColor="{StaticResource vbmwhite}"
+                                    VerticalOptions="Center" />
+                            </border:SfBorder>
+
+                            <Label
+                                FontFamily="{StaticResource lbo}"
+                                FontSize="17"
+                                HorizontalOptions="Center"
+                                Text="1"
+                                TextColor="{StaticResource vbmwhite}"
+                                VerticalOptions="Center" />
+
+                            <border:SfBorder
+                                Padding="0"
+                                BackgroundColor="Transparent"
+                                BorderWidth="0"
+                                HasShadow="False"
+                                HeightRequest="20"
+                                WidthRequest="20">
+                                <Label
+                                    FontFamily="{StaticResource lbo}"
+                                    HorizontalOptions="Center"
+                                    Text="+"
+                                    TextColor="{StaticResource vbmwhite}"
+                                    VerticalOptions="Center" />
+                            </border:SfBorder>
+
+                        </StackLayout>
+
+                    </border:SfBorder>
+
+                </StackLayout>
+
+            </Grid>
+
+        </Grid>
+
+    </border:SfBorder>
+
+</ContentView>

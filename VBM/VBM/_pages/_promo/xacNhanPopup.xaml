@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xct:Popup
+    x:Class="VBM._pages._promo.xacNhanPopup"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    HorizontalOptions="Center"
+    Size="350,450"
+    VerticalOptions="Center"
+    Color="White">
+
+    <Grid>
+
+        <Label
+            Margin="10"
+            HorizontalOptions="Center"
+            Text="Thông tin những món đã chọn sẽ hiển thị ở đây"
+            VerticalOptions="Center" />
+
+        <buttons:SfButton
+            x:Name="btnDone"
+            Margin="20,0,20,20"
+            xct:ShadowEffect.Color="Azure"
+            BackgroundColor="{StaticResource vbmyellow}"
+            Clicked="btnDone_Clicked"
+            CornerRadius="30"
+            FontFamily="{StaticResource lr}"
+            FontSize="17"
+            HasShadow="True"
+            HeightRequest="60"
+            ShadowColor="LightGray"
+            Text="Đưa vào giỏ hàng"
+            TextColor="{StaticResource vbmgray}"
+            VerticalOptions="End"
+            WidthRequest="200" />
+
+        <buttons:SfButton
+            x:Name="btnClose"
+            Margin="10"
+            xct:ShadowEffect.Color="Azure"
+            BackgroundColor="Transparent"
+            BorderWidth="0"
+            Clicked="btnClose_Clicked"
+            CornerRadius="20"
+            FontFamily="{StaticResource lr}"
+            FontSize="17"
+            HasShadow="True"
+            HeightRequest="40"
+            HorizontalOptions="End"
+            ShadowColor="LightGray"
+            Text="X"
+            TextColor="{StaticResource vbmgray}"
+            VerticalOptions="Start"
+            WidthRequest="40" />
+
+    </Grid>
+
+</xct:Popup>

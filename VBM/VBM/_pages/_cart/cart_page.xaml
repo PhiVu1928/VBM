@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="VBM._pages._cart.cart_page"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:btn="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+    xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:local="clr-namespace:VBM._pages._cart"
+    ios:Page.UseSafeArea="True"
+    BackgroundColor="{StaticResource vbmpagebackground}"
+    NavigationPage.HasNavigationBar="False">
+
+    <Grid Padding="10,0">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="80" />
+        </Grid.RowDefinitions>
+
+        <Grid>
+
+            <ff:CachedImage
+                HeightRequest="25"
+                HorizontalOptions="Start"
+                Source="left"
+                VerticalOptions="Center"
+                WidthRequest="25">
+                <ff:CachedImage.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ffimg_turnback_tapped" />
+                </ff:CachedImage.GestureRecognizers>
+            </ff:CachedImage>
+
+            <Label
+                FontFamily="{StaticResource lbo}"
+                FontSize="16"
+                HorizontalOptions="Center"
+                Text="Cart"
+                TextColor="{StaticResource vbmblack}"
+                VerticalOptions="Center" />
+
+        </Grid>
+
+        <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Never">
+            <StackLayout Spacing="20">
+
+                <Grid>
+
+                    <Label
+                        HorizontalOptions="Start"
+                        Text="Delivery"
+                        TextColor="{StaticResource vbmblack}"
+                        VerticalOptions="Center" />
+
+                    <Label
+                        x:Name="lbl_change_add"
+                        HorizontalOptions="End"
+                        Text="Change"
+                        TextColor="{StaticResource vbmbrick}"
+                        TextDecorations="Underline"
+                        VerticalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="lblchange_add_tapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                </Grid>
+
+                <border:SfBorder
+                    Padding="20"
+                    BackgroundColor="White"
+                    BorderWidth="0"
+                    CornerRadius="20"
+                    HasShadow="False">
+
+                    <Label
+                        FontSize="13"
+                        Text="31/15/7 Ung Van Khiem, Phuong 13, Quan Binh Thanh, Ho Chi Minh, Viet Nam"
+                        TextColor="{StaticResource vbmblack}"
+                        VerticalOptions="Center" />
+
+                </border:SfBorder>
+
+                <StackLayout BindableLayout.ItemsSource="{Binding prods}" Spacing="20">
+
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+
+                            <StackLayout Spacing="0">
+
+                                <Grid BindingContext="{Binding mainSp}">
+
+                                    <border:SfBorder
+                                        Padding="20"
+                                        BackgroundColor="White"
+                                        BorderWidth="0"
+                                        CornerRadius="20"
+                                        HasShadow="False"
+                                        IsVisible="{Binding isvis}">
+
+                                        <Grid ColumnSpacing="5">
+
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="auto" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="auto" />
+                                                <RowDefinition Height="auto" />
+                                            </Grid.RowDefinitions>
+
+                                            <ff:CachedImage
+                                                Aspect="Fill"
+                                                BackgroundColor="LightBlue"
+                                                HeightRequest="55"
+                                                HorizontalOptions="Center"
+                                                Source="{Binding img}"
+                                                WidthRequest="80" />
+
+                                            <StackLayout
+                                                Grid.Row="1"
+                                                BindableLayout.ItemsSource="{Binding exts}"
+                                                HorizontalOptions="Center"
+                                                Spacing="3"
+                                                VerticalOptions="Center">
+
+                                                <BindableLayout.ItemTemplate>
+                                                    <DataTemplate>
+
+                                                        <border:SfBorder
+                                                            Padding="5,2"
+                                                            BackgroundColor="{StaticResource vbmdeeplightgray}"
+                                                            CornerRadius="5"
+                                                            HasShadow="False"
+                                                            WidthRequest="80">
+                                                            <Label
+                                                                FontSize="8"
+                                                                HorizontalOptions="Center"
+                                                                HorizontalTextAlignment="Center"
+                                                                Text="{Binding name}"
+                                                                TextColor="{StaticResource vbmgray}" />
+                                                        </border:SfBorder>
+
+                                                    </DataTemplate>
+                                                </BindableLayout.ItemTemplate>
+
+                                            </StackLayout>
+
+                                            <Label
+                                                Grid.Column="1"
+                                                Text="{Binding name}"
+                                                TextColor="{StaticResource vbmblack}"
+                                                VerticalOptions="Center" />
+
+                                            <Grid Grid.Row="1" Grid.Column="1">
+
+                                                <Label
+                                                    Margin="0,0,100,0"
+                                                    FontSize="11"
+                                                    Text="{Binding spis}"
+                                                    TextColor="{StaticResource vbmbrick}"
+                                                    VerticalOptions="Center" />
+
+                                                <StackLayout
+                                                    HorizontalOptions="End"
+                                                    Spacing="2"
+                                                    VerticalOptions="Center"
+                                                    WidthRequest="90">
+
+                                                    <Label
+                                                        FontSize="13"
+                                                        HorizontalOptions="Center"
+                                                        HorizontalTextAlignment="Center"
+                                                        Text="{Binding price, StringFormat='{0:#,0} d'}}"
+                                                        TextColor="{StaticResource vbmpinttext}" />
+
+                                                    <border:SfBorder
+                                                        Padding="10,3"
+                                                        BackgroundColor="{StaticResource vbmpinttext}"
+                                                        CornerRadius="20"
+                                                        HasShadow="False"
+                                                        HorizontalOptions="Center">
+
+                                                        <StackLayout Orientation="Horizontal" Spacing="10">
+
+                                                            <border:SfBorder
+                                                                Padding="0"
+                                                                BackgroundColor="Transparent"
+                                                                BorderWidth="0"
+                                                                HasShadow="False"
+                                                                HeightRequest="20"
+                                                                WidthRequest="20">
+                                                                <Label
+                                                                    FontFamily="{StaticResource lbo}"
+                                                                    HorizontalOptions="Center"
+                                                                    Text="-"
+                                                                    TextColor="{StaticResource vbmwhite}"
+                                                                    VerticalOptions="Center" />
+                                                            </border:SfBorder>
+
+                                                            <Label
+                                                                FontFamily="{StaticResource lbo}"
+                                                                FontSize="17"
+                                                                HorizontalOptions="Center"
+                                                                Text="{Binding slg}"
+                                                                TextColor="{StaticResource vbmwhite}"
+                                                                VerticalOptions="Center" />
+
+                                                            <border:SfBorder
+                                                                Padding="0"
+                                                                BackgroundColor="Transparent"
+                                                                BorderWidth="0"
+                                                                HasShadow="False"
+                                                                HeightRequest="20"
+                                                                WidthRequest="20">
+                                                                <Label
+                                                                    FontFamily="{StaticResource lbo}"
+                                                                    HorizontalOptions="Center"
+                                                                    Text="+"
+                                                                    TextColor="{StaticResource vbmwhite}"
+                                                                    VerticalOptions="Center" />
+                                                            </border:SfBorder>
+
+                                                        </StackLayout>
+
+                                                    </border:SfBorder>
+
+                                                </StackLayout>
+
+                                            </Grid>
+
+                                            <Grid
+                                                Grid.RowSpan="2"
+                                                Grid.Column="0"
+                                                Grid.ColumnSpan="2"
+                                                Margin="0,0,100,0">
+                                                <Grid.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="toEditPage_tapped" />
+                                                </Grid.GestureRecognizers>
+                                            </Grid>
+
+                                        </Grid>
+
+                                    </border:SfBorder>
+
+                                </Grid>
+
+                                <Grid BindingContext="{Binding recommendCb}">
+
+                                    <border:SfBorder
+                                        Padding="0"
+                                        BorderColor="{StaticResource vbmlightgray}"
+                                        BorderWidth="0.5"
+                                        CornerRadius="20"
+                                        HasShadow="False"
+                                        HeightRequest="60"
+                                        IsVisible="{Binding isvis}">
+                                        <Grid>
+
+                                            <Label
+                                                Margin="10,0,110,0"
+                                                FontSize="15"
+                                                HorizontalOptions="Center"
+                                                HorizontalTextAlignment="Center"
+                                                Text="Combo thêm nước tiết kiệm 40%"
+                                                TextColor="{StaticResource vbmgreen}"
+                                                TextDecorations="Underline"
+                                                VerticalOptions="Center" />
+
+                                            <border:SfBorder
+                                                Padding="10,0"
+                                                BorderColor="{StaticResource vbmlightgray}"
+                                                BorderWidth="0.5"
+                                                CornerRadius="20"
+                                                HasShadow="False"
+                                                HorizontalOptions="End"
+                                                WidthRequest="100">
+                                                <Label
+                                                    Margin="10,0"
+                                                    FontSize="13"
+                                                    HorizontalOptions="Center"
+                                                    HorizontalTextAlignment="Center"
+                                                    Text="Thêm nước"
+                                                    TextColor="{StaticResource vbmgreen}"
+                                                    VerticalOptions="Center" />
+                                            </border:SfBorder>
+
+                                        </Grid>
+                                    </border:SfBorder>
+
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="selectDrinkCb_tapped" />
+                                    </Grid.GestureRecognizers>
+
+                                </Grid>
+
+                                <Grid BindingContext="{Binding drinkCbSp}">
+
+                                    <border:SfBorder
+                                        Padding="0"
+                                        BackgroundColor="White"
+                                        BorderWidth="0"
+                                        CornerRadius="20"
+                                        HasShadow="False"
+                                        HeightRequest="100"
+                                        IsVisible="{Binding isvis}">
+
+                                        <Grid ColumnSpacing="5">
+
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="100" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="100" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <ff:CachedImage
+                                                Aspect="Fill"
+                                                BackgroundColor="LightBlue"
+                                                HeightRequest="55"
+                                                HorizontalOptions="Center"
+                                                Source="{Binding img}"
+                                                VerticalOptions="Center"
+                                                WidthRequest="50" />
+
+                                            <StackLayout
+                                                Grid.Column="1"
+                                                Margin="20,0"
+                                                HorizontalOptions="Start"
+                                                Spacing="5"
+                                                VerticalOptions="Center">
+
+                                                <Label FontSize="13" Text="{Binding name}" />
+
+                                                <Label
+                                                    FontSize="11"
+                                                    Text="{Binding spis}"
+                                                    TextColor="{StaticResource vbmbrick}" />
+
+                                            </StackLayout>
+
+                                            <StackLayout
+                                                Grid.Column="2"
+                                                Margin="10,0"
+                                                HorizontalOptions="Center"
+                                                Spacing="3"
+                                                VerticalOptions="Center">
+
+                                                <Label
+                                                    FontSize="13"
+                                                    HorizontalOptions="Center"
+                                                    IsVisible="{Binding visnguyengia}"
+                                                    Text="{Binding nguyengia, StringFormat='{0:#,0} d'}"
+                                                    TextDecorations="Strikethrough" />
+
+                                                <Label
+                                                    FontSize="13"
+                                                    HorizontalOptions="Center"
+                                                    Text="{Binding dongia, StringFormat='{0:#,0} d'}"
+                                                    TextColor="{StaticResource vbmbrick}" />
+
+                                                <border:SfBorder
+                                                    Padding="10,3"
+                                                    BackgroundColor="{StaticResource vbmpinttext}"
+                                                    CornerRadius="20"
+                                                    HasShadow="False"
+                                                    HorizontalOptions="Center"
+                                                    IsVisible="{Binding visChangeSlg}">
+
+                                                    <StackLayout Orientation="Horizontal" Spacing="10">
+
+                                                        <border:SfBorder
+                                                            Padding="0"
+                                                            BackgroundColor="Transparent"
+                                                            BorderWidth="0"
+                                                            HasShadow="False"
+                                                            HeightRequest="20"
+                                                            WidthRequest="20">
+                                                            <Label
+                                                                FontFamily="{StaticResource lbo}"
+                                                                HorizontalOptions="Center"
+                                                                Text="-"
+                                                                TextColor="{StaticResource vbmwhite}"
+                                                                VerticalOptions="Center" />
+                                                        </border:SfBorder>
+
+                                                        <Label
+                                                            FontFamily="{StaticResource lbo}"
+                                                            FontSize="17"
+                                                            HorizontalOptions="Center"
+                                                            Text="1"
+                                                            TextColor="{StaticResource vbmwhite}"
+                                                            VerticalOptions="Center" />
+
+                                                        <border:SfBorder
+                                                            Padding="0"
+                                                            BackgroundColor="Transparent"
+                                                            BorderWidth="0"
+                                                            HasShadow="False"
+                                                            HeightRequest="20"
+                                                            WidthRequest="20">
+                                                            <Label
+                                                                FontFamily="{StaticResource lbo}"
+                                                                HorizontalOptions="Center"
+                                                                Text="+"
+                                                                TextColor="{StaticResource vbmwhite}"
+                                                                VerticalOptions="Center" />
+                                                        </border:SfBorder>
+
+                                                    </StackLayout>
+
+                                                </border:SfBorder>
+
+                                            </StackLayout>
+
+                                        </Grid>
+
+                                    </border:SfBorder>
+
+                                </Grid>
+
+                            </StackLayout>
+
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+
+        <border:SfBorder
+            Grid.Row="2"
+            Margin="20,0"
+            BackgroundColor="{StaticResource vbmyellow}"
+            BorderWidth="0"
+            CornerRadius="20"
+            HasShadow="False"
+            HeightRequest="60"
+            VerticalOptions="Start">
+
+            <Label
+                FontFamily="{StaticResource lbo}"
+                FontSize="17"
+                HorizontalOptions="Center"
+                Text="Complete Order"
+                TextColor="{StaticResource vbmgreen}"
+                VerticalOptions="Center" />
+
+        </border:SfBorder>
+
+        <busyindicator:SfBusyIndicator
+            x:Name="busyindicator"
+            Grid.RowSpan="3"
+            AnimationType="Cupertino"
+            HeightRequest="50"
+            HorizontalOptions="Center"
+            IsBusy="True"
+            TextColor="#1d5234"
+            VerticalOptions="Center"
+            WidthRequest="50" />
+
+    </Grid>
+
+</ContentPage>

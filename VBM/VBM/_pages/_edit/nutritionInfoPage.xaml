@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="VBM._pages._edit.nutritionInfoPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea="True"
+    BackgroundColor="{StaticResource vbmpagebackground}"
+    NavigationPage.HasNavigationBar="False">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Margin="10">
+
+            <ff:CachedImage
+                Aspect="AspectFit"
+                HeightRequest="20"
+                HorizontalOptions="Start"
+                Source="left"
+                VerticalOptions="Center"
+                WidthRequest="20">
+                <ff:CachedImage.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="back_tapped" />
+                </ff:CachedImage.GestureRecognizers>
+            </ff:CachedImage>
+
+            <StackLayout
+                HorizontalOptions="End"
+                Spacing="1"
+                VerticalOptions="Center">
+
+                <ff:CachedImage
+                    Aspect="Fill"
+                    HeightRequest="20"
+                    HorizontalOptions="Center"
+                    Source="infodinhduong"
+                    VerticalOptions="Start"
+                    WidthRequest="20" />
+
+                <Label
+                    FontSize="9"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="Thông tin dinh dưỡng"
+                    TextColor="{StaticResource vbmgreen}"
+                    WidthRequest="50" />
+
+            </StackLayout>
+
+        </Grid>
+
+        <border:SfBorder
+            Grid.Row="1"
+            Padding="0"
+            BackgroundColor="White"
+            BorderColor="{StaticResource vbmlightgray}"
+            BorderWidth="1"
+            CornerRadius="30"
+            HasShadow="True">
+
+            <ScrollView Orientation="Vertical">
+
+                <StackLayout Margin="0,20" Spacing="20">
+
+                    <Label
+                        FontFamily="{StaticResource lbo}"
+                        FontSize="20"
+                        HorizontalOptions="Center"
+                        Text="Thông tin dinh dưỡng"
+                        TextColor="{StaticResource vbmblack}" />
+
+                    <Grid BackgroundColor="#F6F6F9" HeightRequest="50">
+                        <Label
+                            Margin="10,0"
+                            FontSize="13"
+                            HorizontalOptions="Start"
+                            Text="Trọng lượng sản phẩm: 200gr"
+                            TextColor="{StaticResource vbmgray}" />
+                    </Grid>
+
+                    <StackLayout Padding="10,0" Spacing="0">
+
+                        <Grid HeightRequest="30">
+
+                            <Label
+                                FontSize="13"
+                                HorizontalOptions="Start"
+                                Text="Calories"
+                                TextColor="{StaticResource vbmgray}" />
+
+                            <Label
+                                FontSize="13"
+                                HorizontalOptions="End"
+                                Text="525 kcal"
+                                TextColor="{StaticResource vbmgray}" />
+
+                        </Grid>
+
+                        <Grid HeightRequest="30">
+
+                            <Label
+                                FontSize="13"
+                                HorizontalOptions="Start"
+                                Text="Calories"
+                                TextColor="{StaticResource vbmgray}" />
+
+                            <Label
+                                FontSize="13"
+                                HorizontalOptions="End"
+                                Text="525 kcal"
+                                TextColor="{StaticResource vbmgray}" />
+
+                        </Grid>
+
+                        <Grid HeightRequest="30">
+
+                            <Label
+                                FontSize="13"
+                                HorizontalOptions="Start"
+                                Text="Calories"
+                                TextColor="{StaticResource vbmgray}" />
+
+                            <Label
+                                FontSize="13"
+                                HorizontalOptions="End"
+                                Text="525 kcal"
+                                TextColor="{StaticResource vbmgray}" />
+
+                        </Grid>
+
+                    </StackLayout>
+
+                    <Label
+                        Margin="10,0"
+                        FontSize="13"
+                        Text="t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English"
+                        TextColor="{StaticResource vbmgray}" />
+
+                    <Label
+                        Margin="10,0"
+                        FontSize="13"
+                        Text="t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English"
+                        TextColor="{StaticResource vbmgray}" />
+
+                </StackLayout>
+
+            </ScrollView>
+
+        </border:SfBorder>
+
+    </Grid>
+
+</ContentPage>

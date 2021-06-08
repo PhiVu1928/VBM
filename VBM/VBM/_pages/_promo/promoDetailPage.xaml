@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="VBM._pages._promo.promoDetailPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+    xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:lsv="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    Title="Khuyến mãi Mua 1 tặng 1"
+    ios:Page.UseSafeArea="True"
+    BackgroundColor="{StaticResource vbmpagebackground}"
+    NavigationPage.HasNavigationBar="True">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+
+        <lsv:SfListView
+            x:Name="lsvMenu"
+            Margin="0,20"
+            FooterSize="50"
+            ItemSize="240"
+            ItemSpacing="0,0,0,20"
+            ItemsSource="{Binding rowsRender}"
+            SelectionBackgroundColor="Transparent">
+
+            <lsv:SfListView.ItemTemplate>
+                <DataTemplate>
+
+                    <StackLayout
+                        BindableLayout.ItemsSource="{Binding emes}"
+                        HorizontalOptions="Center"
+                        Orientation="Horizontal"
+                        Spacing="20">
+
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+
+                                <Grid WidthRequest="160">
+
+                                    <border:SfBorder
+                                        BackgroundColor="White"
+                                        BorderWidth="0"
+                                        CornerRadius="20"
+                                        HasShadow="True"
+                                        HeightRequest="200"
+                                        ShadowColor="WhiteSmoke"
+                                        VerticalOptions="End">
+
+                                        <Grid HeightRequest="90" VerticalOptions="End">
+                                            <StackLayout
+                                                HorizontalOptions="Center"
+                                                Spacing="5"
+                                                VerticalOptions="Center">
+
+                                                <Label
+                                                    FontSize="18"
+                                                    HorizontalOptions="Center"
+                                                    HorizontalTextAlignment="Center"
+                                                    Text="{Binding name}" />
+
+                                                <Label
+                                                    FontSize="17"
+                                                    HorizontalOptions="Center"
+                                                    HorizontalTextAlignment="Center"
+                                                    Text="{Binding price}"
+                                                    TextColor="{StaticResource vbmbrick}" />
+
+                                            </StackLayout>
+                                        </Grid>
+
+                                    </border:SfBorder>
+
+                                    <border:SfBorder
+                                        CornerRadius="20"
+                                        HasShadow="False"
+                                        HeightRequest="140"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Start"
+                                        WidthRequest="125">
+                                        <ff:CachedImage Aspect="Fill" Source="{Binding img}" />
+                                    </border:SfBorder>
+
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="selectEmenu_tapped" />
+                                    </Grid.GestureRecognizers>
+
+                                </Grid>
+
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+
+                    </StackLayout>
+
+                </DataTemplate>
+            </lsv:SfListView.ItemTemplate>
+
+        </lsv:SfListView>
+
+        <StackLayout
+            Grid.Row="1"
+            HorizontalOptions="Center"
+            Orientation="Horizontal"
+            Spacing="20"
+            VerticalOptions="Start">
+
+            <Label
+                FontSize="17"
+                Text="Quay lại"
+                VerticalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="lblPreStep_tapped" />
+                </Label.GestureRecognizers>
+            </Label>
+
+            <lsv:SfListView
+                HeightRequest="20"
+                HorizontalOptions="Center"
+                ItemSize="20"
+                ItemSpacing="0,0,10,0"
+                ItemsSource="{Binding itemsInvi}"
+                Orientation="Horizontal"
+                SelectionBackgroundColor="Transparent"
+                VerticalOptions="Center"
+                WidthRequest="100">
+
+                <lsv:SfListView.ItemTemplate>
+                    <DataTemplate>
+                        <border:SfBorder
+                            Padding="0"
+                            BackgroundColor="{Binding indivicatorItemColor}"
+                            CornerRadius="10"
+                            HasShadow="False"
+                            HeightRequest="20"
+                            WidthRequest="20" />
+                    </DataTemplate>
+                </lsv:SfListView.ItemTemplate>
+
+            </lsv:SfListView>
+
+        </StackLayout>
+
+    </Grid>
+
+</ContentPage>

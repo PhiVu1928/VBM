@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage
+    x:Class="VBM._pages._main.outline_page"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    x:Name="flypage"
+    ios:Page.UseSafeArea="True"
+    BackgroundColor="White"
+    NavigationPage.HasNavigationBar="False">
+
+    <FlyoutPage.Flyout>
+        <ContentPage Title="vbm" BackgroundColor="WhiteSmoke">
+            <Grid />
+        </ContentPage>
+    </FlyoutPage.Flyout>
+    <FlyoutPage.Detail>
+        <ContentPage Title="vbm" BackgroundColor="{StaticResource vbmgreen}">
+            <Grid>
+                <busyindicator:SfBusyIndicator
+                    x:Name="busyindicator"
+                    AnimationType="Material"
+                    BackgroundColor="Transparent"
+                    HeightRequest="80"
+                    HorizontalOptions="Center"
+                    TextColor="{StaticResource vbmyellow}"
+                    VerticalOptions="Center"
+                    ViewBoxHeight="80"
+                    ViewBoxWidth="80"
+                    WidthRequest="80" />
+            </Grid>
+        </ContentPage>
+    </FlyoutPage.Detail>
+
+</FlyoutPage>

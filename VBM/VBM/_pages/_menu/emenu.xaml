@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="VBM._pages._menu.emenu"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+
+    <Grid WidthRequest="160">
+
+        <border:SfBorder
+            BackgroundColor="White"
+            BorderWidth="0"
+            CornerRadius="20"
+            HasShadow="True"
+            HeightRequest="200"
+            ShadowColor="WhiteSmoke"
+            VerticalOptions="End">
+
+            <Grid HeightRequest="90" VerticalOptions="End">
+                <StackLayout
+                    HorizontalOptions="Center"
+                    Spacing="5"
+                    VerticalOptions="Center">
+
+                    <Label
+                        FontSize="18"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding name}" />
+
+                    <Label
+                        FontSize="17"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding price}"
+                        TextColor="{StaticResource vbmbrick}" />
+
+                </StackLayout>
+            </Grid>
+
+        </border:SfBorder>
+
+        <border:SfBorder
+            CornerRadius="20"
+            HasShadow="False"
+            HeightRequest="140"
+            HorizontalOptions="Center"
+            VerticalOptions="Start"
+            WidthRequest="125">
+            <ff:CachedImage Aspect="Fill" Source="{Binding img}" />
+        </border:SfBorder>
+
+        <Grid.GestureRecognizers>
+            <TapGestureRecognizer Tapped="editEmenu_tapped" />
+        </Grid.GestureRecognizers>
+
+    </Grid>
+
+</ContentView>

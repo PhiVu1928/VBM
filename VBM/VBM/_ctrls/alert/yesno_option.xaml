@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<pages:PopupPage
+    x:Class="VBM.ctrls.alert.yesno_option"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Button="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:pages="http://rotorgames.com">
+
+    <pages:PopupPage.Animation>
+        <pages:ScaleAnimation
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8" />
+    </pages:PopupPage.Animation>
+
+    <Grid
+        Margin="20"
+        HeightRequest="300"
+        VerticalOptions="Center">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <border:SfBorder
+            Grid.Row="1"
+            Padding="10"
+            BackgroundColor="{StaticResource vbmwhite}"
+            CornerRadius="20">
+            <Button:SfButton
+                x:Name="btnOK"
+                Margin="30,0"
+                BackgroundColor="{Binding color}"
+                Clicked="btnOK_Clicked"
+                HeightRequest="50"
+                TextColor="{StaticResource vbmwhite}"
+                VerticalOptions="End" />
+        </border:SfBorder>
+
+        <Label
+            x:Name="lblmsg"
+            Grid.RowSpan="2"
+            Margin="10"
+            FontSize="Medium"
+            HorizontalOptions="Center"
+            HorizontalTextAlignment="Center"
+            TextColor="{StaticResource vbmgreen}"
+            VerticalOptions="Center" />
+
+        <border:SfBorder
+            x:Name="bodertop"
+            Grid.RowSpan="2"
+            Padding="0"
+            BackgroundColor="{Binding color}"
+            BorderColor="{StaticResource vbmwhite}"
+            BorderWidth="1"
+            CornerRadius="30"
+            HasShadow="False"
+            HeightRequest="60"
+            HorizontalOptions="Center"
+            VerticalOptions="Start"
+            WidthRequest="60">
+            <Image
+                x:Name="imgtop"
+                Aspect="Fill"
+                HeightRequest="30"
+                HorizontalOptions="Center"
+                Source="{Binding source}"
+                VerticalOptions="Center"
+                WidthRequest="30" />
+        </border:SfBorder>
+
+    </Grid>
+
+</pages:PopupPage>

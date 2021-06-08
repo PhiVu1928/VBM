@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="VBM._pages._login.login_page"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:_ctrls="clr-namespace:VBM._ctrls"
+    xmlns:btn="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    ios:Page.UseSafeArea="True"
+    BackgroundColor="{StaticResource vbmpagebackground}"
+    NavigationPage.HasNavigationBar="True">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="430*" />
+            <RowDefinition Height="460*" />
+        </Grid.RowDefinitions>
+
+        <Grid RowSpacing="0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+
+            <ff:CachedImage Aspect="Fill" BackgroundColor="Yellow" />
+
+            <Grid
+                Grid.Row="1"
+                BackgroundColor="{StaticResource vbmwhite}"
+                ColumnSpacing="0">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid xct:TouchEffect.AnimationDuration="500" xct:TouchEffect.PressedBackgroundColor="{StaticResource vbmlightgray}">
+
+                    <Label
+                        FontFamily="{StaticResource lbo}"
+                        FontSize="17"
+                        HorizontalOptions="Center"
+                        Text="Login"
+                        TextColor="{StaticResource vbmblack}"
+                        VerticalOptions="Center" />
+
+                    <BoxView
+                        BackgroundColor="{StaticResource vbmyellow}"
+                        HeightRequest="3"
+                        VerticalOptions="End" />
+
+                </Grid>
+
+                <Grid
+                    Grid.Column="1"
+                    xct:TouchEffect.AnimationDuration="500"
+                    xct:TouchEffect.PressedBackgroundColor="{StaticResource vbmlightgray}">
+
+                    <Label
+                        FontFamily="{StaticResource lbo}"
+                        FontSize="17"
+                        HorizontalOptions="Center"
+                        Text="Sign-up"
+                        TextColor="{StaticResource vbmblack}"
+                        VerticalOptions="Center" />
+
+                </Grid>
+
+            </Grid>
+
+        </Grid>
+
+        <StackLayout
+            Grid.Row="1"
+            Margin="30,20,30,0"
+            Spacing="0">
+
+            <StackLayout Spacing="0">
+
+                <Label Text="Number phone:" TextColor="{StaticResource vbmgray}" />
+
+                <Grid HeightRequest="50">
+
+                    <_ctrls:_entry
+                        ClearButtonVisibility="WhileEditing"
+                        FontFamily="{StaticResource lbo}"
+                        FontSize="15"
+                        Keyboard="Telephone"
+                        Placeholder="Your number phone"
+                        PlaceholderColor="{StaticResource vbmlightgray}"
+                        TextColor="{StaticResource vbmblack}" />
+
+                    <BoxView
+                        BackgroundColor="{StaticResource vbmgray}"
+                        HeightRequest="1"
+                        VerticalOptions="End" />
+
+                </Grid>
+
+            </StackLayout>
+
+            <StackLayout Margin="0,30,0,0" Spacing="0">
+
+                <Label Text="Password:" TextColor="{StaticResource vbmgray}" />
+
+                <Grid HeightRequest="50">
+
+                    <_ctrls:_entry
+                        ClearButtonVisibility="WhileEditing"
+                        FontFamily="{StaticResource lbo}"
+                        FontSize="15"
+                        Placeholder="Your password"
+                        PlaceholderColor="{StaticResource vbmlightgray}"
+                        TextColor="{StaticResource vbmblack}" />
+
+                    <BoxView
+                        BackgroundColor="{StaticResource vbmgray}"
+                        HeightRequest="1"
+                        VerticalOptions="End" />
+
+                </Grid>
+
+            </StackLayout>
+
+            <Label
+                Margin="0,30,0,0"
+                xct:TouchEffect.AnimationDuration="300"
+                xct:TouchEffect.PressedOpacity="0.5"
+                xct:TouchEffect.PressedScale="0.5"
+                Text="Forgot password?"
+                TextColor="{StaticResource vbmgray}" />
+
+        </StackLayout>
+
+        <btn:SfButton
+            Grid.Row="1"
+            Margin="30,10"
+            xct:TouchEffect.AnimationDuration="200"
+            xct:TouchEffect.PressedOpacity="0.5"
+            xct:TouchEffect.PressedScale="0.5"
+            BackgroundColor="{StaticResource vbmyellow}"
+            CornerRadius="20"
+            HeightRequest="60"
+            Text="Login"
+            TextColor="{StaticResource vbmgreen}"
+            VerticalOptions="End" />
+
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="VBM._pages._main.profile_page"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:listview="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+    ios:Page.UseSafeArea="True"
+    BackgroundColor="White">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="60" />
+        </Grid.RowDefinitions>
+
+        <Grid>
+
+            <StackLayout
+                Margin="10,0"
+                HorizontalOptions="Start"
+                Orientation="Horizontal"
+                Spacing="10"
+                VerticalOptions="Center">
+
+                <border:SfBorder
+                    Padding="0"
+                    BorderColor="{StaticResource vbmlightgray}"
+                    BorderWidth="0.5"
+                    CornerRadius="35"
+                    HeightRequest="70"
+                    IsClippedToBounds="True"
+                    WidthRequest="70">
+                    <forms:CachedImage
+                        Aspect="Fill"
+                        HeightRequest="60"
+                        Source="user"
+                        WidthRequest="60" />
+                </border:SfBorder>
+
+                <StackLayout Spacing="0" VerticalOptions="Center">
+
+                    <Label
+                        FontSize="15"
+                        Text="Phan Xuan Dung"
+                        TextColor="{StaticResource vbmgreen}" />
+
+                    <Label
+                        FontSize="13"
+                        Text="0947968745"
+                        TextColor="{StaticResource vbmgray}" />
+
+                    <Label
+                        FontSize="13"
+                        Text="Green"
+                        TextColor="{StaticResource vbmgray}" />
+
+                </StackLayout>
+
+            </StackLayout>
+
+            <buttons:SfButton
+                BackgroundColor="Transparent"
+                CornerRadius="20"
+                HeightRequest="40"
+                WidthRequest="40">
+                <forms:CachedImage
+                    Margin="10,0"
+                    Aspect="Fill"
+                    HeightRequest="30"
+                    HorizontalOptions="End"
+                    Source="setting_icon"
+                    VerticalOptions="Center"
+                    WidthRequest="30" />
+            </buttons:SfButton>
+
+        </Grid>
+
+        <Grid Grid.Row="2" Margin="10,0">
+
+            <buttons:SfButton
+                BackgroundColor="Transparent"
+                HorizontalOptions="Start"
+                VerticalOptions="Center">
+                <StackLayout
+                    Orientation="Horizontal"
+                    Spacing="5"
+                    VerticalOptions="Center">
+                    <forms:CachedImage
+                        Aspect="Fill"
+                        HeightRequest="30"
+                        Source="languageicon"
+                        VerticalOptions="Center"
+                        WidthRequest="30" />
+                    <Label
+                        FontSize="15"
+                        Text="Tieng Viet"
+                        TextColor="{StaticResource vbmgray}"
+                        VerticalOptions="Center" />
+                </StackLayout>
+            </buttons:SfButton>
+
+            <buttons:SfButton
+                BackgroundColor="Transparent"
+                FontAttributes="Bold"
+                FontSize="16"
+                HorizontalOptions="End"
+                Text="{Binding logout_title}"
+                TextColor="{StaticResource vbmgray}"
+                VerticalOptions="Center" />
+
+        </Grid>
+
+    </Grid>
+
+</ContentPage>
